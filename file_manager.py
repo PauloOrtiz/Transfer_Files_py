@@ -4,10 +4,11 @@ import logging
 import os
 
 class FileTransfer:
-    def __init__(self, source_path, destination_path, file_type):
+    def __init__(self, source_path, destination_path, file_type, message):
         self._source_path = source_path
         self._destination_path = destination_path
         self._file_type = file_type
+        self._message = message
 
         logging.basicConfig(filename='transfer_log.txt', level=logging.INFO,
                             format='%(asctime)s [%(levelname)s] %(message)s', datefmt='%d-%m-%Y %H:%M:%S')
@@ -35,17 +36,21 @@ class FileTransfer:
             list_files = self.find_files()
 
             for file in list_files:
-                destination_file = os
                 destination_file = os.path.join(self._destination_path, os.path.basename(file))
                 shutil.move(file, destination_file)
-                self.create_log(file, destination_file)
+
+                if os.path.exists(destination_file):
+                    self.create_log(file, destination_file, self._message)
+                else:
+                    logging.error(f"Falha ao mover o arquivo {file} para {destination_file}")
 
         except Exception as e:
             logging.error(str(e))
             raise
 
-    def create_log(self, file, destination):
-        log_message = "Transferencia realizada do arquivo {} para {}".format(file, destination)
+
+    def create_log(self, file, destination, message):
+        log_message = "Transferencia realizada do arquivo {} para {} referente a ".format(file, destination)
         logging.info(log_message)
 
     
