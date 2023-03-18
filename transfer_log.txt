@@ -1,0 +1,2 @@
+18-03-2023 00:55:00 [INFO] Transferencia realizada do arquivo C:\Users\porti\OneDrive\Documentos\Estudo\Python\transfer Files Python\Transfer_Files_py\Origem\teste.txt para C:\Users\porti\OneDrive\Documentos\Estudo\Python\transfer Files Python\Transfer_Files_py\Destino\
+18-03-2023 00:55:00 [INFO] Transferencia realizada do arquivo C:\Users\porti\OneDrive\Documentos\Estudo\Python\transfer Files Python\Transfer_Files_py\Origem\teste1.txt para C:\Users\porti\OneDrive\Documentos\Estudo\Python\transfer Files Python\Transfer_Files_py\Destino\
