@@ -2,6 +2,7 @@ import glob
 import shutil
 import logging
 import os
+from datetime import datetime 
 
 class FileTransfer:
     def __init__(self, source_path, destination_path, file_type, message):
@@ -10,7 +11,8 @@ class FileTransfer:
         self._file_type = file_type
         self._message = message
 
-        logging.basicConfig(filename='transfer_log.txt', level=logging.INFO,
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        logging.basicConfig(filename= current_date, level=logging.INFO,
                             format='%(asctime)s [%(levelname)s] %(message)s', datefmt='%d-%m-%Y %H:%M:%S')
 
         self.validate_paths()
