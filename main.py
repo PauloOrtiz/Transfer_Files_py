@@ -2,10 +2,6 @@ import argparse
 from file_manager import FileTransfer
 from transfer_params import read_transfer_params
 
-import argparse
-from file_manager import FileTransfer
-from transfer_params import read_transfer_params
-
 def main(params_file):
     transfer_params_list = read_transfer_params(params_file)
 
